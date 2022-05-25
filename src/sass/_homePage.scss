@@ -1,0 +1,78 @@
+@import "./mixin";
+@import "./varaible";
+
+.search-box {
+  margin: 4rem auto;
+  width: 400px;
+  @include cardStyle;
+}
+
+.search-box input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: $textMuted;
+}
+
+.table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 2rem;
+  @include cardStyle;
+}
+
+.header-table td {
+  color: $secondayColor;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+}
+
+.rank {
+  color: $textMuted;
+}
+
+.name img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.allname {
+  color: $secondayColor;
+  margin-right: 10px;
+}
+
+.symbolname {
+  color: $textMuted;
+}
+
+.price {
+  color: $secondayColor;
+}
+
+.change-price {
+  display: flex;
+  color: $secondayColor;
+}
+
+.buy {
+  @include buttonStyle($primaryColor);
+}
+
+.increase-price {
+  color: #1cbe1c;
+}
+
+.decrease-price {
+  color: #db2828;
+}
+
+@include mediaQuery("Sm") {
+  .search-box {
+    width: 300px;
+  }
+}
