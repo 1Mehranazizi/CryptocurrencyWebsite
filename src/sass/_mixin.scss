@@ -1,0 +1,34 @@
+@import "./varaible";
+
+@mixin cardStyle {
+    background-color:$cardBg;
+    border-radius: 20px;
+    padding: 1rem;
+    transition: all .3s ease;
+}
+
+@mixin buttonStyle {
+    background-color: $primaryColor;
+    padding: 8px 1.2rem;
+    color: $secondayColor;
+    border-radius: 20px;
+    transition: background-color .3s ease;
+}
+
+@mixin mediaQuery($size) {
+    @if($size=="Lg") {
+        @media(max-width:1200px){
+            @content;
+        }
+    }
+    @else if($size=="Md") {
+        @media(max-width:990px){
+            @content;
+        }
+    }
+    @else if($size=="Sm") {
+        @media(max-width:768px) {
+            @content;
+        }
+    }
+}
