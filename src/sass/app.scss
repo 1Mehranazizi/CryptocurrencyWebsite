@@ -38,6 +38,7 @@ body {
   padding: 1.5rem 0;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .logo {
     color: #fff;
@@ -81,14 +82,30 @@ body {
 }
 
 .hamburger {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
 }
 
-
 // Resoponsive Navigation
-.nav {
+
+.logo {
   @include mediaQuery("Md") {
+    flex: 0 0 100%;
+  }
+}
+
+@include mediaQuery("Md") {
+  .nav-link {
+    justify-content: space-between;
+    margin-top: 1rem;
+    flex: 0 0 100%;
+  }
+
+  .nav {
+    padding-top: 3rem;
     position: fixed;
     z-index: 40;
     top: 0;
@@ -101,21 +118,18 @@ body {
     transition: right 0.3s ease;
 
     .nav-item {
-        padding: 2rem 0 !important;
+      padding: 2rem 0 !important;
     }
 
     .hamburger {
-        align-self: flex-start;
+      align-self: flex-start;
     }
+  }
+  .hamburger {
+    display: flex;
   }
 }
 
-.hamburger {
-    @include mediaQuery("Md") {
-        display: flex;
-    }
-}
-
 .nav.nav-open {
-    right: 0;
+  right: 0;
 }
