@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: $cardBg;
+  background-color: #191c1e;
 }
 
 .container {
@@ -18,17 +18,104 @@ body {
 }
 
 .container {
-    @include mediaQuery("Lg") {
-        width: 990px;
-        padding: 0 1rem;
+  @include mediaQuery("Lg") {
+    width: 980px;
+  }
+
+  @include mediaQuery("Md") {
+    width: auto;
+    padding: 0 2rem;
+  }
+
+  @include mediaQuery("Sm") {
+    padding: 0 1rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    color: #fff;
+
+    span {
+      color: $primaryColor;
+    }
+  }
+
+  .nav {
+    list-style: none;
+    display: flex;
+
+    .nav-item {
+      color: $textMuted;
+      padding: 0 1rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondayColor;
+      }
     }
 
+    .nav-item.active {
+      color: $secondayColor;
+    }
+  }
+}
+
+.nav-link {
+  display: flex;
+
+  .login-btn {
+    @include buttonStyle(#191c1e);
+  }
+
+  .signup-btn {
+    @include buttonStyle($primaryColor);
+  }
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+
+// Resoponsive Navigation
+.nav {
+  @include mediaQuery("Md") {
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 250px;
+    background-color: $cardBg;
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.3s ease;
+
+    .nav-item {
+        padding: 2rem 0 !important;
+    }
+
+    .hamburger {
+        align-self: flex-start;
+    }
+  }
+}
+
+.hamburger {
     @include mediaQuery("Md") {
-        width: auto;
-        padding: 2rem;
+        display: flex;
     }
+}
 
-    @include mediaQuery("Sm") {
-        padding: 0 1rem;
-    }
+.nav.nav-open {
+    right: 0;
 }
