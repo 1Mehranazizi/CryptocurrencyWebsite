@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //Icons
 import { IoCaretDownOutline, IoCaretUpOutline } from "react-icons/io5";
@@ -9,10 +10,12 @@ const Coin = ({ coinData }) => {
       <td>
         <span className="rank">{coinData.market_cap_rank}</span>
       </td>
-      <td className="name">
-        <img src={coinData.image} alt={coinData.name} />
-        <p className="allname">{coinData.name}</p>
-        <p className="symbolname">{coinData.symbol.toUpperCase()}</p>
+      <td>
+        <Link to={coinData.id} className="name">
+          <img src={coinData.image} alt={coinData.name} />
+          <p className="allname">{coinData.name}</p>
+          <p className="symbolname">{coinData.symbol.toUpperCase()}</p>
+        </Link>
       </td>
       <td>
         <p className="price">${coinData.current_price.toLocaleString()}</p>
@@ -31,7 +34,9 @@ const Coin = ({ coinData }) => {
         <p className="price">${coinData.market_cap.toLocaleString()}</p>
       </td>
       <td>
-          <button className="buy">More</button>
+        <Link to={coinData.id} className="buy">
+          More
+        </Link>
       </td>
     </tr>
   );

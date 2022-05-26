@@ -26,22 +26,24 @@ const HomePage = () => {
         <input type="text" placeholder="Search..." />
       </div>
       {data.length > 0 ? (
-        <table className="table">
-          <thead className="header-table">
-            <tr>
-              <td>#</td>
-              <td>Name</td>
-              <td>Price</td>
-              <td>24h %</td>
-              <td>MarketCap</td>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((coin) => (
-              <Coin key={coin.name} coinData={coin} />
-            ))}
-          </tbody>
-        </table>
+        <div className="table-container">
+          <table className="table">
+            <thead className="header-table">
+              <tr>
+                <td>#</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>24h %</td>
+                <td>MarketCap</td>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((coin) => (
+                <Coin key={coin.id} coinData={coin} />
+              ))}
+            </tbody>
+          </table>
+        </div>
       ) : (
         <SkeletonTheme baseColor="#262A2F" highlightColor="#566066">
           <Skeleton height={50} count={10} style={{ margin: ".5rem" }} />

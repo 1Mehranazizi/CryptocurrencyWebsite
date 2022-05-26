@@ -71,8 +71,26 @@
   color: #db2828;
 }
 
+@include mediaQuery("Md") {
+  .table {
+    border-spacing: 1.5rem;
+  }
+}
+
 @include mediaQuery("Sm") {
   .search-box {
     width: 300px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .table {
+    border-spacing: 1rem;
+  }
+
+  .table td {
+    font-size: 13px;
   }
 }
