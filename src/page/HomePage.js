@@ -7,6 +7,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 //Components
 import Coin from "../components/shared/Coin";
 
+//Images
+import crImage from "../assets/img/image.png";
+
 const HomePage = () => {
   const [data, setData] = useState([]);
 
@@ -22,8 +25,21 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <div className="search-box">
-        <input type="text" placeholder="Search..." />
+      <div className="banner">
+        <div className="text-banner">
+          <h2>Jump start your crypto portfolio</h2>
+          <p>
+            Coinbase is the easiest place to buy and sell cryptocurrency. Sign
+            up and get started today.
+          </p>
+          <div className="email-received">
+            <input type="text" placeholder="Email Address" />
+            <button>Get Started</button>
+          </div>
+        </div>
+        <div className="img-banner">
+          <img src={crImage} alt="cr" />
+        </div>
       </div>
       {data.length > 0 ? (
         <div className="table-container">

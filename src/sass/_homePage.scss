@@ -71,9 +71,78 @@
   color: #db2828;
 }
 
+.banner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.banner .img-banner {
+  flex: 0 0 60%;
+}
+
+.banner .img-banner img {
+  max-width: 100%;
+}
+
+.banner .text-banner {
+  flex: 0 0 40%;
+}
+
+.banner .text-banner h2 {
+  color: $secondayColor;
+  font-size: 62px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.banner .text-banner p {
+  font-size: 20px;
+  line-height: 1.4;
+  color: $textMuted;
+}
+
+.email-received {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  height: 60px;
+}
+
+.email-received input {
+  height: 100%;
+  padding: 0 1rem;
+  color: $textMuted;
+  background-color: $cardBg;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.email-received button {
+  @include buttonStyle($primaryColor);
+  height: 100%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
 @include mediaQuery("Md") {
   .table {
     border-spacing: 1.5rem;
+  }
+
+  .banner .text-banner{
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  .email-received {
+    justify-content: center;
+  }
+
+  .img-banner {
+    display: none;
   }
 }
 
@@ -92,5 +161,9 @@
 
   .table td {
     font-size: 13px;
+  }
+
+  .banner .text-banner h2 {
+    font-size: 50px;
   }
 }

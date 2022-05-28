@@ -89,6 +89,7 @@ const CoinPage = () => {
       ]);
       setNewSeries([
         {
+          name:"Price",
           data: newData,
         },
       ]);
