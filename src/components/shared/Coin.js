@@ -11,7 +11,7 @@ const Coin = ({ coinData }) => {
         <span className="rank">{coinData.market_cap_rank}</span>
       </td>
       <td>
-        <Link to={coinData.id} className="name">
+        <Link to={coinData.symbol.toUpperCase()} className="name">
           <img src={coinData.image} alt={coinData.name} />
           <p className="allname">{coinData.name}</p>
           <p className="symbolname">{coinData.symbol.toUpperCase()}</p>
@@ -34,7 +34,7 @@ const Coin = ({ coinData }) => {
         <p className="price">${coinData.market_cap.toLocaleString()}</p>
       </td>
       <td>
-        <Link to={coinData.id} className="buy">
+        <Link to={coinData.symbol.toUpperCase()} className="buy">
           More
         </Link>
       </td>
