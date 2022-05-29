@@ -15,7 +15,7 @@ const CoinPage = () => {
     ],
     options: {
       chart: {
-        type: "area",
+        type: "candlestick",
         height: 350,
         id: "chart",
         zoom: {
@@ -83,13 +83,14 @@ const CoinPage = () => {
       const response = await axios.get(
         `https://min-api.cryptocompare.com/data/histoday?fsym=${id}&tsym=USD&limit=30`
       );
-      const newData = response.data.Data.map((coin) => [
-        timeConverter(coin.time),
-        Math.floor(coin.close),
-      ]);
+      const newData = response.data.Data.map((coin) => ({
+        x: timeConverter(coin.time),
+        y: [coin.open, coin.high, coin.low, coin.close],
+      }));
+      console.log(newData);
       setNewSeries([
         {
-          name:"Price",
+          name: "Price",
           data: newData,
         },
       ]);
@@ -102,7 +103,7 @@ const CoinPage = () => {
       <ReactApexChart
         options={data.options}
         series={newSeries}
-        type="area"
+        type="candlestick"
         height={350}
       />
     </div>

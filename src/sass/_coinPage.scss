@@ -1,8 +1,21 @@
+@import "./varaible";
+
 .chart {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .apexcharts-title-text {
-    fill: #fff !important;
-    font-size: 1.1rem;
+  fill: #fff;
+  font-size: 1.1rem;
+}
+
+.apexcharts-subtitle-text {
+  fill: $textMuted;
+  font-size: 1rem;
+}
+
+.apexcharts-yaxis-label,
+.apexcharts-xaxis-label {
+  fill: $textMuted;
+  font-size: 14px;
 }
