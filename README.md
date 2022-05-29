@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-show demo https://majestic-sawine-7913df.netlify.app/
+show demo [https://majestic-sawine-7913df.netlify.app/](https://steady-gumdrop-f59627.netlify.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
